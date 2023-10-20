@@ -1,0 +1,382 @@
+* {
+   border: 0;
+   margin: 0;
+   padding: 0;
+	
+}
+
+body {
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+
+:root {
+	--readWhite: #F9FAF8;
+	--darkRedBg: #860D0D;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: unset;
+	cursor: pointer;
+}
+
+/*---------------------------------------------------------------*/
+
+/*----------------320px----------------*/
+
+@media all and (min-width: 320px) {
+
+	p {
+		font-size: 0.9em;
+	}
+
+	.navigation, .header {
+		width: 100%;
+		background-color: var(--darkRedBg);
+	}
+
+	.navigation {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+	}
+
+	.logo-fig {
+		padding-bottom: 1em;
+	}
+
+	.links-list {
+		width: 100%;
+		display: flex; flex-direction: row; justify-content: center; align-items: center;
+		gap: 0.5em;
+		padding-bottom: 1em;
+	}
+
+	.links-list li a {
+		color: var(--readWhite);
+		text-decoration: none;
+	}
+
+	.header-fig {
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+	}
+
+	.figure, .img {
+		width: 100%;
+	}
+
+	.header-section {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		padding-bottom: 1em;
+	}
+
+	.header-section h1 {
+		font-family: 'Cardo', serif;
+	}
+
+	.header-section h1, .header-section h2 {
+		text-align: center;
+		color: var(--readWhite);
+	}
+
+	.header-section h1 {
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+
+	.header-section h2 {
+		font-size: 1em;
+		font-weight: 400;
+	}
+
+	.header-btn {
+		display: none;
+	}
+
+	.principal {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		background-color: whitesmoke;
+	}
+
+	.items-section {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+	}
+
+	.collection-title {
+		text-decoration: underline;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.items-article {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: space-evenly; align-items: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.division {
+		width: 85%;
+		max-width: 85%;
+		display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+		background-color: burlywood;
+		margin-bottom: 1.5em;
+		padding-bottom: 1em;
+		border-radius: 1em;
+		overflow: hidden;
+		box-shadow: 0em 0.05em 0.2em 0em;
+	}
+
+	.author-fig {
+		width: 100%;
+	}
+
+	.author-fig img {
+		width: 100%;
+		height: 10em;
+	}
+
+	.author-name {
+		font-family: 'Cardo', serif;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	.author-quote {
+		width: 100%;
+		display: flex; flex-direction: row; justify-content: center; align-items: center;
+		font-size: 0.8em;
+		opacity: 0.9;
+		margin-bottom: 1em;
+	}
+
+	.author-quote q {
+		width: 90%;
+		font-style: italic;
+	}
+
+	.download-btn {
+		width: 85%;
+		background-color: var(--darkRedBg);
+		font-family: 'Roboto', sans-serif;
+		color: var(--readWhite);
+		border-radius: 0.5em;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		box-shadow: 0em 0.15em 0.2em 0em black;
+	}
+
+	#index-quote {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		background-color: bisque;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+	}
+
+	#index-quote blockquote {
+		width: 85%;
+		text-align: justify;
+	}
+
+	.index-quote-p {
+		margin-bottom: 1em;
+		font-family: 'Cardo', serif;
+		font-style: italic;
+	}
+
+	.signature {
+		text-align: right;
+		font-family: 'Cardo', serif;
+	}
+
+	.register-section {
+		width: 100%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		background-color: whitesmoke;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+	}
+
+	.register-box {
+		width: 90%;
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		background-color: burlywood;
+		padding-top:1em;
+		padding-bottom: 1em;
+		border-radius: 0.5em;
+		box-shadow: 0em 0.15em 0.2em 0em black;
+	}
+
+	.register-box article {
+		width: 90%;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	.register-title {
+		font-size: 1em;
+		margin-bottom: 0.5em;
+		text-decoration: underline;
+	}
+
+	.div-register-btn {
+		width: 90%;
+	}
+
+	.register-btn {
+		width: 100%;
+		background-color: var(--darkRedBg);
+		color: white;
+		padding-top: 0.7em;
+		padding-bottom: 0.7em;
+		border-radius: 0.5em;
+		box-shadow: 0em 0.15em 0.2em 0em black;
+	}
+
+	.footer {
+		background-color: var(--darkRedBg);
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.dev-signature {
+		text-align: center;
+		color: var(--readWhite);
+	}
+
+	.dev-signature a {
+		color: bisque;
+		font-family: 'Cardo', serif;
+	}
+}
+
+/*-------------END: 320px--------------*/
+
+/*----------------480px----------------*/
+
+@media all and (min-width: 480px) {
+
+	.header {
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+	}
+
+	.header-section {
+		width: 80%;
+		text-align: center;
+	}
+
+	.division {
+		width: 70%;
+	}
+
+	.register-section {
+		width: 80%;
+	}
+
+	.register-box {
+		width: 80%;
+	}
+}
+
+/*-------------END: 480px--------------*/
+
+/*----------------576px----------------*/
+
+@media all and (min-width: 576px) {
+
+	.logo-fig {
+		width: 75%;
+	}
+
+	.division {
+		width: 60%;
+	}
+
+	.index-quote-p {
+		font-size: 1em;
+	}
+
+}
+
+/*-------------END: 576px--------------*/
+
+/*----------------768px----------------*/
+
+@media all and (min-width: 768px) {
+
+	.logo-fig {
+		width: 70%;
+	}
+
+	.header-section {
+		padding-top: 0.5em;
+	}
+
+	.collection-title {
+		width: 80%;
+		text-align: left;
+		font-size: 1.5em;
+	}
+
+	.items-article {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.division {
+		width: 40%;
+	}
+
+	.register-section {
+		width: 70%;
+	}
+
+}
+
+/*-------------END: 768px--------------*/
+
+/*----------------976px----------------*/
+
+@media all and (min-width: 976px) {
+
+	.logo-fig {
+		width: 50%;
+	}
+
+	.collection-title {
+		width: 70%;
+	}
+
+	.items-article {
+		width: 90%;
+	}
+
+	.division {
+		width: 35%;
+	}
+
+	.register-section {
+		width: 60%;
+	}
+
+	#index-quote {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+	}
+
+	#index-quote blockquote {
+		width: 75%;
+	}
+	
+}
+
+/*-------------END: 976px--------------*/
