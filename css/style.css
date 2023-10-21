@@ -5,6 +5,8 @@
 	
 }
 
+/*-------------------------GENERAL CSS---------------------------*/
+
 body {
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
@@ -110,6 +112,7 @@ a {
 
 	.collection-title {
 		text-decoration: underline;
+		font-family: 'Card', serif;
 		padding-top: 1em;
 		padding-bottom: 1em;
 	}
@@ -380,3 +383,174 @@ a {
 }
 
 /*-------------END: 976px--------------*/
+
+/*----------------1024px----------------*/
+
+@media all and (min-width: 1024px) {
+
+	.navigation {
+		flex-direction: row; justify-content: space-around; align-items: center;
+	}
+
+	.logo-fig {
+		width: 15%;
+		padding-top: 1em;
+	}
+
+	.links-list {
+		width: 30%;
+	}
+
+	.links-list li a {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.about-li {
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+	}
+
+	.header {
+		flex-direction: row; justify-content: center; align-items: center;
+		padding-bottom: 3em; 
+	}
+
+	.header-section {
+		width: 35%;
+	}
+
+	.header-section h1, .header-section h2 {
+		width: 100%;
+		text-align: left !important;
+	}
+
+	.header-fig {
+		width: 25%;
+		position: relative;
+	}
+
+	.front-img {
+		z-index: 10;
+	}
+
+	.behind-img {
+		position: absolute;
+		left: 10%;
+		top: 10%;
+		z-index: 1;
+	}
+
+	.items-article {
+		width: 80%;
+	}
+
+	.division {
+		width: 35%;
+	}
+
+	.lovecraft-box, .borges-box {
+		margin-bottom: 2.5em;
+	}
+
+	#index-quote {
+		position: relative;
+		margin-bottom: 5em;
+	}
+
+	#dickens-quote::before {
+		content: '';
+		background-image: url("../img/background-for-quote.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding-top: 12em;
+		padding-bottom: 12em;
+		opacity: 0.8;
+	}
+
+	#dickens-quote {
+		width: 60%;
+	}
+
+	.index-quote-p {
+		line-height: 2em;
+		font-size: 1.7em;
+		font-weight: 700;
+		position: relative;
+		margin-top: 1em;
+	}
+
+	.signature {
+		font-size: 1.7em;
+		font-weight: 700;
+		position: relative;
+	}
+
+	.register-section {
+		width: 50%;
+	}
+}
+/*-------------END: 1024px--------------*/
+
+/*----------------1200px----------------*/
+
+@media all and (min-width: 1200px) {
+
+	.items-article {
+		width: 65%;
+	}
+
+}
+
+/*-------------END: 1200px--------------*/
+
+/*----------------1280px----------------*/
+
+@media all and (min-width: 1200px) {
+
+	.header-section {
+		width: 40%;
+	}
+
+	.items-article {
+		width: 95%;
+		flex-wrap: nowrap;
+	}
+
+	.division {
+		width: 20%;
+	}
+
+	.author-quote q {
+		width: 80%;
+	}
+
+	#index-quote {
+		margin-bottom: 7em !important;
+	}
+
+	.register-section {
+		width: 40%;
+		margin-bottom: 2em;
+	}
+}
+
+/*-------------END: 1280px--------------*/
+
+/*----------------1366px----------------*/
+
+@media all and (min-width: 1366px) {
+
+	.division {
+		width: 18%;
+	}
+
+}
+
+/*-------------END: 1366px--------------*/
