@@ -23,11 +23,16 @@ ul {
 }
 
 a {
+	text-decoration: none;
 	color: unset;
 	cursor: pointer;
 }
 
 /*------------------------HOVER/FOCUS/ACTIVE---------------------*/
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
 
 .division {
 	transition: 0.4s;
@@ -44,10 +49,9 @@ a {
 	transition: 0.02s;
 }
 
-.register-box:hover {
-	transform:rotate(360deg);
-	transition: 0.5s;
-	box-shadow: 0 0.1em 1em 0;
+.github-logo:hover {
+	transform:rotate(720deg);
+	transition: 0.4s;
 }
 
 .links-list li a:hover {
@@ -295,12 +299,16 @@ a {
 	}
 
 	.footer {
+		width: 100%;
+		display: flex; flex-direction: row; justify-content: center; align-items: center;
 		background-color: var(--bgBlack);
 		padding-top: 1em;
 		padding-bottom: 1em;
 	}
 
 	.dev-signature {
+		width: 90%;
+		display: flex; flex-direction: row; justify-content: center; align-items: center;
 		text-align: center;
 		color: var(--readWhite);
 	}
@@ -308,6 +316,19 @@ a {
 	.dev-signature a {
 		color: bisque;
 		font-family: 'Cardo', serif;
+	}
+
+	.github-link {
+		width: min-content;
+		display: flex; flex-direction: row; justify-content: center; align-items: center;
+		margin-left: 0.8em;
+	}
+
+	.github-logo {
+		width: 20%;
+		fill: white !important;
+		padding-bottom: 0.1em;
+		margin-left: 0.2em;
 	}
 }
 
