@@ -1,8 +1,8 @@
-* {
-   border: 0;
-   margin: 0;
-   padding: 0;
-	
+*, ::after, ::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+	box-sizing: border-box;
 }
 
 /*-------------------------GENERAL CSS---------------------------*/
@@ -34,18 +34,39 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
+h1::selection, h2::selection, h3::selection, h4::selection, a::selection, q::selection, strong::selection, p::selection {
+	background-color: var(--darkRedBg);
+	color: var(--readWhite);
+}
+
+.header-section h1:hover::after, .header-section h2:hover::after {
+	transition: all linear 0.2s;
+}
+
+.header-section h1:hover::after, .header-section h2:hover::after {
+	opacity: 1;
+}
+
+.collection-title {
+	transition: all linear 0.2s;
+}
+
+.collection-title:hover {
+	color: var(--darkRedBg);
+}
+
 .division {
 	transition: 0.4s;
 }
 
 .division:hover {
-	transform:scale(1.1);
+	transform:scale(1.07);
 	box-shadow: 0em 0.1em 1em 0em;
 }
 
 .download-btn:active, .register-btn:active {
 	box-shadow: 0 0 0 0;
-	transform: translateY(0.3em);
+	transform: translateY(0.2em);
 	transition: 0.02s;
 }
 
@@ -54,9 +75,20 @@ a:hover, a:focus {
 	transition: 0.4s;
 }
 
-.links-list li a:hover {
-	background-color: var(--darkRedBg);
+.links-list li a {
+	transition: all 0.2s linear;
 }
+
+.links-list li a:hover {
+	background-color: var(--readWhite);
+	color: var(--darkRedBg)
+}
+
+button {
+	cursor: pointer;
+}
+
+
 
 /*---------------------------------------------------------------*/
 
@@ -75,8 +107,22 @@ a:hover, a:focus {
 
 	.header {
 		width: 100%;
-		background-color: var(--darkRedBg);
-		padding-top: 0.5em;
+		min-height: 70vh;
+		display: flex;
+		position: relative;
+	}
+
+	.header::after {
+		content: '';
+		inset: 0;
+		z-index: -1;
+		position: absolute;
+		background-image: url('../img/header-hero.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		alt: 'Bookstore library heading cover';
+		opacity: 0.9;
 	}
 
 	.navigation {
@@ -85,29 +131,27 @@ a:hover, a:focus {
 	}
 
 	.logo-fig {
-		width: 80% !important;
-		padding-bottom: 0.5em;
-		padding-top: 0.5em;
+		width: 35% !important;
 	}
 
 	.links-list {
 		width: 100%;
-		display: flex; flex-direction: row; justify-content: center; align-items: center;
+		display: flex; flex-direction: row;
+		justify-content: center; align-items: center;
 		padding-bottom: 1em;
+		border-radius: 2em;
+	}
+
+	.links-list li {
+		border-radius: 2rem;
+		overflow: hidden;
 	}
 
 	.links-list li a {
 		color: var(--readWhite);
 		text-decoration: none;
-		padding-top: 0.2em;
-		padding-left: 0.5em;
-		padding-right: 0.5em;
-		padding-bottom: 0.5em;
-	}
-
-	.about-li {
-		border-left: 1px solid var(--darkRedBg);
-		border-right: 1px solid var(--darkRedBg);
+		padding: 0.5rem;
+		display: block;
 	}
 
 	.header-fig {
@@ -133,13 +177,29 @@ a:hover, a:focus {
 	}
 
 	.header-section h1, .header-section h2 {
+		width: fit-content;
 		text-align: center;
 		color: var(--readWhite);
+		text-shadow: 0 0 0.5rem black;
+		font-weight: bolder;
+		position: relative;
+		z-index: 10;
+		padding: 0.2rem 0.5rem;
+		margin: 0.5em;
+	}
+
+	.header-section h1::after, .header-section h2::after {
+		content: '';
+		inset: 0;
+		z-index: -1;
+		background-color: var(--bgBlack);
+		border-radius: 2rem;
+		position: absolute;
+		opacity: 0.9;
 	}
 
 	.header-section h1 {
 		font-size: 1.5em;
-		margin-bottom: 0.5em;
 	}
 
 	.header-section h2 {
@@ -148,7 +208,8 @@ a:hover, a:focus {
 	}
 
 	.header-btn {
-		display: none;
+		width: 50% !important;
+		margin-top: 0.5rem;
 	}
 
 	.principal {
@@ -164,9 +225,11 @@ a:hover, a:focus {
 
 	.collection-title {
 		text-decoration: underline;
-		font-family: 'Card', serif;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.2rem;
 		padding-top: 1em;
 		padding-bottom: 1em;
+		color: #4d4d4d;
 	}
 
 	.items-article {
@@ -179,12 +242,12 @@ a:hover, a:focus {
 	.division {
 		width: 85%;
 		max-width: 85%;
-		height: 20em;
+		min-height: 21em;
 		display: flex; flex-direction: column; justify-content: space-between; align-items: center;
 		background-color: burlywood;
-		margin-bottom: 1.5em;
+		margin-bottom: 2em;
 		padding-bottom: 1em;
-		border-radius: 1em;
+		border-radius: 0.75em;
 		overflow: hidden;
 		box-shadow: 0em 0.05em 0.2em 0em;
 	}
@@ -207,7 +270,8 @@ a:hover, a:focus {
 	.author-quote {
 		width: 100%;
 		display: flex; flex-direction: row; justify-content: center; align-items: center;
-		font-size: 0.8em;
+		font-family: 'Cardo', serif;
+		font-size: 1.1em;
 		opacity: 0.9;
 		margin-bottom: 1em;
 	}
@@ -222,7 +286,7 @@ a:hover, a:focus {
 		background-color: var(--darkRedBg);
 		font-family: 'Roboto', sans-serif;
 		color: var(--readWhite);
-		border-radius: 0.5em;
+		border-radius: 3em;
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 		box-shadow: 0em 0.3em 0.3em 0em black;
@@ -230,26 +294,49 @@ a:hover, a:focus {
 
 	#index-quote {
 		width: 100%;
+		min-height: 85vh;
 		display: flex; flex-direction: column; justify-content: center; align-items: center;
 		background-color: bisque;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		margin-bottom: 1em;
+		position: relative;
 	}
 
 	#index-quote blockquote {
 		width: 85%;
 		text-align: justify;
+		z-index: 10;
+		text-shadow: 0 0 0.03rem black;
+	}
+
+	#index-quote::before {
+		content: '';
+		background-image: url("../img/bg-quote-mobile.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		alt: 'Book on a desk background cover';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0.4;
+		z-index: 0;
 	}
 
 	.index-quote-p {
 		margin-bottom: 1em;
 		font-family: 'Cardo', serif;
+		font-size: 1.2rem;
 		font-style: italic;
+		line-height: 2.5rem;
 	}
 
 	.signature {
 		text-align: right;
+		font-size: 1.3rem;
 		font-family: 'Cardo', serif;
 	}
 
@@ -286,6 +373,9 @@ a:hover, a:focus {
 
 	.div-register-btn {
 		width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.register-btn {
@@ -294,8 +384,8 @@ a:hover, a:focus {
 		color: white;
 		padding-top: 0.7em;
 		padding-bottom: 0.7em;
-		border-radius: 0.5em;
-		box-shadow: 0em 0.3em 0.2em 0em black;
+		border-radius: 2rem;
+		box-shadow: 0em 0.2em 0.1em 0em black;
 	}
 
 	.footer {
@@ -342,25 +432,22 @@ a:hover, a:focus {
 		display: flex; flex-direction: column; justify-content: center; align-items: center;
 	}
 
-	.logo-fig {
-		width: 60% !important;
-	}
-
 	.header-section {
 		width: 80%;
 		text-align: center;
 	}
 
-	.division {
-		width: 65%;
+	.links-list {
+		justify-content: space-evenly;
 	}
 
-	.register-section {
-		width: 80%;
+	.division {
+		width: 65%;
+		min-height: 23em;
 	}
 
 	.register-box {
-		width: 80%;
+		width: 75%;
 	}
 }
 
@@ -374,12 +461,32 @@ a:hover, a:focus {
 		width: 75%;
 	}
 
+	.header-section h1 {
+		font-size: 2rem !important;
+	}
+
+	.header-section h2  {
+		font-size: 1.2rem;
+	}
+
+	.header-section h1, .header-section h2 {
+		padding: 0.3rem 0.75rem;
+	}
+
 	.division {
 		width: 55%;
 	}
 
 	.index-quote-p {
-		font-size: 1em;
+		font-size: 1.5em;
+	}
+
+	.signature {
+		font-size: 1.6rem;
+	}
+
+	.register-btn.bottom-btn {
+		width: 60%;
 	}
 
 }
@@ -391,7 +498,7 @@ a:hover, a:focus {
 @media all and (min-width: 768px) {
 
 	.logo-fig {
-		width: 50% !important;
+		width: 25% !important;
 	}
 
 	.header-section {
@@ -413,8 +520,17 @@ a:hover, a:focus {
 		width: 35%;
 	}
 
-	.register-section {
-		width: 70%;
+	.index-quote-p {
+		font-size: 2rem;
+		line-height: 4rem;
+	}
+
+	.signature {
+		font-size: 2.2rem;
+	}
+
+	.register-btn.bottom-btn {
+		width: 50%;
 	}
 
 }
@@ -425,8 +541,25 @@ a:hover, a:focus {
 
 @media all and (min-width: 960px) {
 
+	.navigation {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.links-list {
+		width: 25%;
+		padding-right: 0.5rem;
+		padding-bottom: 0em !important;
+	}
+
 	.logo-fig {
-		width: 40% !important;
+		width: 5% !important;
+		padding-left: 1rem !important;
+	}
+
+	.header {
+		min-height: 90vh;
 	}
 
 	.collection-title {
@@ -441,10 +574,6 @@ a:hover, a:focus {
 		width: 33.5%;
 	}
 
-	.register-section {
-		width: 60%;
-	}
-
 	#index-quote {
 		padding-top: 1.5em;
 		padding-bottom: 1.5em;
@@ -452,6 +581,10 @@ a:hover, a:focus {
 
 	#index-quote blockquote {
 		width: 75%;
+	}
+
+	.register-btn.bottom-btn {
+		width: 40%;
 	}
 	
 }
@@ -462,20 +595,9 @@ a:hover, a:focus {
 
 @media all and (min-width: 1024px) {
 
-	.navigation {
-		flex-direction: row; justify-content: space-around; align-items: center;
-	}
-
-	.logo-fig {
-		width: 25% !important;
-		padding-top: 1em;
-	}
-
 	.links-list {
 		width: 30%;
 		padding-bottom: 0;
-		border-radius: 2em;
-		overflow: hidden;
 	}
 
 	.links-list li {
@@ -496,13 +618,12 @@ a:hover, a:focus {
 	}
 
 	.header-section {
-		width: 35%;
+		width: 45%;
 	}
 
 	.header-section h1, .header-section h2 {
-		width: 100%;
-		text-align: left !important;
-	}
+    padding: 0.5rem 2rem;
+}
 
 	.header-fig {
 		width: 25%;
@@ -521,12 +642,17 @@ a:hover, a:focus {
 		z-index: 1;
 	}
 
+	.items-section {
+		min-height: 90vh;
+	}
+
 	.items-article {
 		width: 80%;
 	}
 
 	.division {
 		width: 33.5%;
+		min-height: 25em;
 	}
 
 	.lovecraft-box, .borges-box {
@@ -534,46 +660,52 @@ a:hover, a:focus {
 	}
 
 	#index-quote {
+		min-height: 90vh;
 		position: relative;
 		margin-bottom: 5em;
 	}
 
-	#dickens-quote::before {
+	#dickens-quote {
+		width: 60%;
+		text-shadow: 0 0 0.05rem black;
+	}
+
+	#index-quote::before {
 		content: '';
 		background-image: url("../img/background-for-quote.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+		alt: 'Book on a desk background cover';
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding-top: 12em;
-		padding-bottom: 12em;
-		opacity: 0.8;
-	}
-
-	#dickens-quote {
-		width: 60%;
+		opacity: 0.6;
 	}
 
 	.index-quote-p {
 		line-height: 2em;
-		font-size: 1.7em;
-		font-weight: 700;
 		position: relative;
 		margin-top: 1em;
 	}
 
 	.signature {
 		font-size: 1.7em;
-		font-weight: 700;
 		position: relative;
 	}
 
-	.register-section {
-		width: 50%;
+	.register-box {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 2rem;
+	}
+
+	.register-box article {
+		min-width: 60%;
+		text-align: left;
 	}
 }
 /*-------------END: 1024px--------------*/
@@ -582,13 +714,13 @@ a:hover, a:focus {
 
 @media all and (min-width: 1200px) {
 
+	.header-section {
+		width: 40%;
+	}
+
 	.items-article {
 		width: 65%;
 		padding-bottom: 1.5em;
-	}
-
-	.division {
-		height: 21em;
 	}
 
 	.lovecraft-box, .borges-box {
@@ -602,8 +734,16 @@ a:hover, a:focus {
 
 @media all and (min-width: 1280px) {
 
+	.logo-fig {
+    width: 6.5% !important;
+	}
+
 	.header-section {
-		width: 40%;
+		width: 45%;
+	}
+
+	.items-section {
+		min-height: 95vh;
 	}
 
 	.items-article {
@@ -611,8 +751,13 @@ a:hover, a:focus {
 		flex-wrap: nowrap;
 	}
 
+	.collection-title {
+		text-align: center;
+	}
+
 	.division {
 		width: 20%;
+		min-height: 28rem !important;
 	}
 
 	.author-quote q {
@@ -624,8 +769,11 @@ a:hover, a:focus {
 	}
 
 	.register-section {
-		width: 40%;
-		margin-bottom: 2em;
+		margin-bottom: 5em;
+	}
+
+	.register-btn {
+		width: 45%;
 	}
 }
 
@@ -634,10 +782,6 @@ a:hover, a:focus {
 /*----------------1366px----------------*/
 
 @media all and (min-width: 1366px) {
-
-	.logo-fig {
-		width: 15% !important;
-	}
 	
 	.division {
 		width: 18%;
