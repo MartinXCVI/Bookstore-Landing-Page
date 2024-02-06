@@ -39,7 +39,7 @@ h1::selection, h2::selection, h3::selection, h4::selection, a::selection, q::sel
 	color: var(--readWhite);
 }
 
-.header-section h1:hover::after, .header-section h2:hover::after {
+.header-section h1::after, .header-section h2::after {
 	transition: all linear 0.2s;
 }
 
